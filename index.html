@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breakout / Arkanoid</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <h1>Breakout / Arkanoid</h1>
+        <div class="controls">
+          <button id="startBtn" type="button">Start</button>
+          <button id="resetBtn" type="button">Reset</button>
+        </div>
+      </header>
+      <p class="hint">
+        Move with mouse or A/D and Left/Right. Break all bricks to win.
+      </p>
+      <div class="stage">
+        <canvas
+          id="gameCanvas"
+          width="960"
+          height="600"
+          aria-label="Breakout game"
+        ></canvas>
+        <div id="overlay" class="overlay" role="status" aria-live="polite"></div>
+      </div>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
