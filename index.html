@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Minesweeper</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <h1>Retro Minesweeper</h1>
+      <section class="board-wrap">
+        <div class="hud" aria-label="Game status">
+          <div class="counter" id="mine-counter" aria-live="polite">010</div>
+          <div class="controls">
+            <button id="reset-button" class="reset" type="button" aria-label="Start new game">:)</button>
+            <button id="hint-button" class="hint-button" type="button" aria-label="Reveal a safe tile">?</button>
+          </div>
+          <div class="counter" id="timer" aria-live="polite">000</div>
+        </div>
+        <div
+          id="board"
+          class="board"
+          role="grid"
+          aria-label="Minesweeper board"
+        ></div>
+      </section>
+      <p class="hint">
+        Left click to reveal. Right click to flag.
+      </p>
+      <p id="status" class="status" aria-live="polite">Clear all safe cells to win.</p>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
