@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Pinball</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hud">
+        <h1>Cloud Pinball</h1>
+        <div class="hud-row">
+          <div class="stat">Score: <span id="score">0</span></div>
+          <div class="stat">Best: <span id="best">0</span></div>
+          <div class="stat">Lives: <span id="lives">3</span></div>
+        </div>
+        <p class="controls">Controls: Left/Right Arrow (or A/D) flippers, Space launches ball</p>
+      </header>
+      <section class="board-wrap">
+        <canvas id="pinball" width="480" height="720" aria-label="Pinball game board"></canvas>
+        <div id="overlay" class="overlay">Press Space to launch</div>
+      </section>
+      <button id="restart" type="button">Restart Game</button>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
