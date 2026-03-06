@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Minesweeper</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <h1 class="title">RETRO MINESWEEPER</h1>
+
+      <section class="panel" aria-label="Game controls">
+        <div class="status">
+          <span class="label">MINES</span>
+          <span id="mineCounter" class="digits">000</span>
+        </div>
+
+        <button id="resetBtn" class="reset-btn" type="button" aria-label="Reset game">
+          :)
+        </button>
+
+        <div class="status">
+          <span class="label">STATE</span>
+          <span id="gameState" class="digits">READY</span>
+        </div>
+      </section>
+
+      <section class="board-wrap" aria-label="Minesweeper board">
+        <div id="board" class="board" role="grid" aria-live="polite"></div>
+      </section>
+
+      <p class="hint">Left click to reveal. Right click to flag.</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

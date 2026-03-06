@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Courier New", Courier, monospace;
+  background: #1f2a44;
+  color: #f8f3d4;
+}
+
+.app-shell {
+  width: min(94vw, 720px);
+  padding: 18px;
+  border: 4px solid #f8f3d4;
+  background: linear-gradient(180deg, #2f4368 0%, #23365a 100%);
+  box-shadow: 8px 8px 0 #0e1626;
+}
+
+.title {
+  margin: 0 0 14px;
+  text-align: center;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  letter-spacing: 2px;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+  border: 3px inset #cad7ef;
+  padding: 10px;
+  margin-bottom: 12px;
+  background: #1f2f4f;
+}
+
+.status {
+  display: grid;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.digits {
+  display: inline-block;
+  min-height: 1.8rem;
+  padding: 4px 8px;
+  border: 2px inset #cad7ef;
+  background: #09101f;
+  color: #ff4e4e;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.reset-btn {
+  width: 52px;
+  height: 52px;
+  border: 3px outset #d4e0f8;
+  background: #f8f3d4;
+  color: #12203b;
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reset-btn:active {
+  border-style: inset;
+}
+
+.board-wrap {
+  border: 4px inset #d4e0f8;
+  background: #8fa3c4;
+  padding: 8px;
+}
+
+.board {
+  display: grid;
+  gap: 2px;
+  justify-content: center;
+}
+
+.cell {
+  width: clamp(24px, 5vw, 34px);
+  aspect-ratio: 1 / 1;
+  border: 2px outset #e8eef8;
+  background: #c6d4eb;
+  color: #11213f;
+  font: inherit;
+  font-size: clamp(0.8rem, 2.3vw, 1rem);
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  padding: 0;
+}
+
+.cell:hover {
+  background: #d8e4f7;
+}
+
+.cell.revealed {
+  border-style: inset;
+  background: #b4c7e4;
+}
+
+.cell.mine {
+  background: #e45757;
+  color: #fff;
+}
+
+.cell.flagged {
+  color: #f0bf40;
+}
+
+.n1 {
+  color: #244ecf;
+}
+
+.n2 {
+  color: #2d8f4c;
+}
+
+.n3 {
+  color: #bf2f3f;
+}
+
+.n4 {
+  color: #6b2f8f;
+}
+
+.n5 {
+  color: #6f3c1f;
+}
+
+.n6 {
+  color: #0f6b73;
+}
+
+.n7 {
+  color: #0e1836;
+}
+
+.n8 {
+  color: #6a7079;
+}
+
+.hint {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
