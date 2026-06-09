@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import ShaderTableBackground from "./components/ShaderTableBackground";
 
 const SUITS = ["♠", "♥", "♦", "♣"];
 const RANKS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -196,6 +197,7 @@ export default function Home() {
         <p className="game-subtitle">Beat the dealer without going over 21.</p>
 
         <div className="table">
+          <ShaderTableBackground />
           <section className="hand-zone">
             <div className="hand-zone__header">
               <h2>Dealer</h2>

@@ -1,6 +1,6 @@
 # Classic Blackjack (Next.js)
 
-A browser-based classic blackjack card game built with Next.js App Router and plain JavaScript.
+A browser-based classic blackjack card game built with Next.js App Router, now with an animated 3D shader table surface powered by Three.js.
 
 ## Run locally
 
