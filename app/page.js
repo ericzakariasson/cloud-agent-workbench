@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ShaderTableBackground from "./components/ShaderTableBackground";
 
 const SUITS = ["♠", "♥", "♦", "♣"];
@@ -137,6 +137,7 @@ function Card({ card }) {
 
 export default function Home() {
   const [gameState, setGameState] = useState(() => dealInitialState());
+  const [tableTilt, setTableTilt] = useState({ x: 0, y: 0 });
   const { deck, playerHand, dealerHand, status } = gameState;
   const isPlaying = status === "playing";
 
@@ -190,13 +191,36 @@ export default function Home() {
     });
   }
 
+  const handleTableMove = useCallback((event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const xRatio = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const yRatio = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    setTableTilt({
+      x: Number((-yRatio * 8).toFixed(2)),
+      y: Number((xRatio * 10).toFixed(2))
+    });
+  }, []);
+
+  const handleTableLeave = useCallback(() => {
+    setTableTilt({ x: 0, y: 0 });
+  }, []);
+
   return (
     <main className="page">
       <section className="game-shell">
         <h1>Classic Blackjack</h1>
         <p className="game-subtitle">Beat the dealer without going over 21.</p>
 
-        <div className="table">
+        <div
+          className="table"
+          onMouseMove={handleTableMove}
+          onMouseLeave={handleTableLeave}
+          style={{
+            "--tilt-x": `${tableTilt.x}deg`,
+            "--tilt-y": `${tableTilt.y}deg`
+          }}
+        >
           <ShaderTableBackground />
           <section className="hand-zone">
             <div className="hand-zone__header">

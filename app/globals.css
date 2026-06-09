@@ -226,6 +226,10 @@ body {
   border: 1px solid var(--card-border);
   border-radius: 12px;
   background: color-mix(in srgb, var(--card-bg) 80%, var(--bg-page));
+  transform-style: preserve-3d;
+  transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.14s ease-out;
+  will-change: transform;
 }
 
 .table > * {
@@ -255,6 +259,7 @@ body {
   border: 1px dashed color-mix(in srgb, var(--card-border) 65%, transparent);
   background: color-mix(in srgb, var(--card-bg) 40%, transparent);
   backdrop-filter: blur(2px);
+  transform: translateZ(26px);
 }
 
 .hand-zone__header {
@@ -357,6 +362,10 @@ body {
 }
 
 @media (max-width: 640px) {
+  .table {
+    transform: none;
+  }
+
   .page {
     padding-top: 68px;
   }
