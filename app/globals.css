@@ -187,30 +187,156 @@ body {
 
 .page {
   flex: 1;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: 0;
-  place-items: center;
   padding: 24px;
 }
 
-.card {
-  width: min(100%, 560px);
-  padding: 32px;
+.game-shell {
+  width: min(100%, 780px);
+  padding: 28px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 12px;
+  border-radius: 16px;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-h1 {
+.game-shell h1 {
   margin: 0 0 12px;
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
   color: var(--text);
 }
 
-p {
-  margin: 0;
-  line-height: 1.5;
+.game-subtitle {
+  margin: 0 0 20px;
+  line-height: 1.4;
   color: var(--text-muted);
 }
+
+.table {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--card-bg) 80%, var(--bg-page));
+}
+
+.hand-zone {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--card-border);
+}
+
+.hand-zone__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.hand-zone__header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.hand-zone__header span {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hand-zone__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 88px;
+}
+
+.playing-card {
+  width: 58px;
+  height: 78px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: color-mix(in srgb, var(--card-bg) 88%, var(--bg-page));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 7px;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.playing-card span:last-child {
+  align-self: flex-end;
+}
+
+.playing-card--red {
+  color: #cf1b1b;
+}
+
+.status-text {
+  margin: 14px 0 0;
+  min-height: 24px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.controls {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.controls button {
+  border: 1px solid var(--card-border);
+  border-radius: 9px;
+  background: var(--card-bg);
+  color: var(--text);
+  padding: 9px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls button:hover:enabled {
+  background: color-mix(in srgb, var(--card-bg) 85%, var(--bg-page));
+}
+
+.controls button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.controls button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 68px;
+  }
+
+  .game-shell {
+    padding: 18px;
+  }
+
+  .table {
+    padding: 10px;
+  }
+
+  .hand-zone__cards {
+    gap: 8px;
+  }
+
+  .playing-card {
+    width: 52px;
+    height: 72px;
+  }
+}
+

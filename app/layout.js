@@ -3,8 +3,8 @@ import { themeInitScript } from "./theme-init";
 import ThemeToggle from "./components/ThemeToggle";
 
 export const metadata = {
-  title: "Cursor X Workbench",
-  description: "A super vanilla Next.js app."
+  title: "Classic Blackjack",
+  description: "A browser-based classic blackjack card game."
 };
 
 export default function RootLayout({ children }) {
